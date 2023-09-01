@@ -1,6 +1,6 @@
 const StepButtons = () => {
   return (
-    <div className="flex">
+    <div className="flex mt-auto">
       <div className="w-full flex justify-start">
         <button
           className="text-neutral-cool-gray font-ubuntu-medium px-6 py-3 "
