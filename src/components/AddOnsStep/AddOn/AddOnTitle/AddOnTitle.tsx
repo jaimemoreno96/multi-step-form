@@ -1,6 +1,6 @@
 const AddOnTitle = ({ title }: any) => {
   return (
-    <label className="font-ubuntu-bold text-base text-primary-marine-blue">
+    <label className="font-ubuntu-medium text-base text-primary-marine-blue">
       {title}
     </label>
   );

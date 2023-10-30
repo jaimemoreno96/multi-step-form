@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Switch } from "@headlessui/react";
 import { Plan } from "../../components/SelectPlanStep/Plan";
 import { BillingOptionLabel } from "../../components/SelectPlanStep/BillingOptionLabel";
@@ -10,7 +10,8 @@ import iconAdvanced from "../../assets/icons/icon-advanced.svg";
 import iconPro from "../../assets/icons/icon-pro.svg";
 
 const SelectPlanStep = () => {
-  const [optionBilling, setOptionBilling] = useState(false);
+  const [optionBillingYearly, setOptionBillingYearly] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState(0);
   const [plans, setPlans] = useState([
     {
       index: 1,
@@ -35,6 +36,14 @@ const SelectPlanStep = () => {
     },
   ]);
 
+  useEffect(() => {
+    const plansAfterSelect = [...plans].map((plan) => {
+      return { ...plan, selected: plan.index === selectedPlan };
+    });
+
+    setPlans(plansAfterSelect);
+  }, [selectedPlan]);
+
   return (
     <div className="flex flex-col">
       <div className="flex mb-8">
@@ -42,17 +51,21 @@ const SelectPlanStep = () => {
           <Plan
             plan={plan}
             isLast={plan.index === plans.length}
-            optionBilling={optionBilling}
+            optionBilling={optionBillingYearly}
+            setSelectedPlan={setSelectedPlan}
           />
         ))}
       </div>
       <div className="flex w-full py-2 justify-center items-center rounded-lg bg-neutral-alabaster">
-        <BillingOptionLabel option="Monthly" isSelected={!optionBilling} />
-        <BillingOptionSwitch
-          optionBilling={optionBilling}
-          setOptionBilling={setOptionBilling}
+        <BillingOptionLabel
+          option="Monthly"
+          isSelected={!optionBillingYearly}
         />
-        <BillingOptionLabel option="Yearly" isSelected={optionBilling} />
+        <BillingOptionSwitch
+          optionBilling={optionBillingYearly}
+          setOptionBilling={setOptionBillingYearly}
+        />
+        <BillingOptionLabel option="Yearly" isSelected={optionBillingYearly} />
       </div>
     </div>
   );
