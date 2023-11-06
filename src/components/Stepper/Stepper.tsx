@@ -1,4 +1,4 @@
-import Step from "./Step/Step";
+import { Step } from "./Step";
 
 const Stepper = ({ steps, setActive }: any) => {
   return (

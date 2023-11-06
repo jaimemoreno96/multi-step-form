@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
-import { Switch } from "@headlessui/react";
 import { Plan } from "../../components/SelectPlanStep/Plan";
 import { BillingOptionLabel } from "../../components/SelectPlanStep/BillingOptionLabel";
 import { BillingOptionSwitch } from "../../components/SelectPlanStep/BillingOptionSwitch";
@@ -8,29 +7,30 @@ import { BillingOptionSwitch } from "../../components/SelectPlanStep/BillingOpti
 import iconArcade from "../../assets/icons/icon-arcade.svg";
 import iconAdvanced from "../../assets/icons/icon-advanced.svg";
 import iconPro from "../../assets/icons/icon-pro.svg";
+import { PlanName, PlanType } from "../../types";
 
 const SelectPlanStep = () => {
   const [optionBillingYearly, setOptionBillingYearly] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState(0);
-  const [plans, setPlans] = useState([
+  const [plans, setPlans] = useState<PlanType[]>([
     {
       index: 1,
       icon: iconArcade,
-      name: "Arcade",
+      name: PlanName.ARCADE,
       price: { yearly: 90, monthly: 9 },
       selected: false,
     },
     {
       index: 2,
       icon: iconAdvanced,
-      name: "Advanced",
+      name: PlanName.ARCADE,
       price: { yearly: 120, monthly: 12 },
       selected: false,
     },
     {
       index: 3,
       icon: iconPro,
-      name: "Pro",
+      name: PlanName.ARCADE,
       price: { yearly: 150, monthly: 15 },
       selected: false,
     },

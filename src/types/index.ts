@@ -11,11 +11,11 @@ export interface StepType {
 export interface YourInfoStepType {
   name: string;
   email: string;
-  phone: number;
+  phone: string;
 }
 
 export interface SelectPlanStepType {
-  plan: Plan;
+  plan: PlanName;
   billingOption: BillingOption;
 }
 
@@ -30,13 +30,15 @@ export interface NewSubscription {
   addons: AddOnsStepType;
 }
 
-export interface Plan {
-  planType: PlanType;
-  price: number;
-  freeMonths: number;
+export interface PlanType {
+  index: number;
+  icon: string;
+  name: PlanName;
+  price: { yearly: number; monthly: number };
+  selected: boolean;
 }
 
-export enum PlanType {
+export enum PlanName {
   ARCADE = "arcade",
   ADVANCED = "advanced",
   PRO = "pro",

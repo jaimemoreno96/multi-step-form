@@ -1,8 +1,8 @@
 import { Formik } from "formik";
-import { InputType, YourInfoError, YourInfoStepType } from "../../../types";
 import { Input } from "./Input";
 import { Label } from "./Label";
 import { ErrorAlert } from "./ErrorAlert";
+import { InputType, YourInfoError, YourInfoStepType } from "../../../types";
 
 const YourInfoForm = () => {
   const formInputs: InputType[] = [
@@ -21,7 +21,7 @@ const YourInfoForm = () => {
     {
       label: "Phone Number",
       name: "phone",
-      type: "text",
+      type: "tel",
       placeholder: "e.g. +1 234 567 890",
     },
   ];
