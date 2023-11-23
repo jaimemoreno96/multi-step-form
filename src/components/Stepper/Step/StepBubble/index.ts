@@ -1,1 +1,1 @@
-export { default as SetpBubble } from "./StepBubble";
+export { default as StepBubble } from "./StepBubble";

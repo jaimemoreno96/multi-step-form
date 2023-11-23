@@ -39,9 +39,9 @@ export interface PlanType {
 }
 
 export enum PlanName {
-  ARCADE = "arcade",
-  ADVANCED = "advanced",
-  PRO = "pro",
+  ARCADE = "Arcade",
+  ADVANCED = "Advanced",
+  PRO = "Pro",
 }
 
 export interface AddOn {

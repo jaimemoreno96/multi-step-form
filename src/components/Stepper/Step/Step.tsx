@@ -1,4 +1,4 @@
-import StepBubble from "./StepBubble/StepBubble";
+import { StepBubble } from "./StepBubble";
 import { StepName } from "./StepName";
 import { StepNumber } from "./StepNumber";
 

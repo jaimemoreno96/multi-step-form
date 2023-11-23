@@ -4,7 +4,7 @@ const Stepper = ({ steps, setActive }: any) => {
   return (
     <>
       {steps.map((step: any) => (
-        <Step step={step} setActive={setActive} />
+        <Step key={step.index} step={step} setActive={setActive} />
       ))}
     </>
   );

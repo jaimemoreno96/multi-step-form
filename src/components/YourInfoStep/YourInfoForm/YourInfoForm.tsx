@@ -61,7 +61,7 @@ const YourInfoForm = () => {
       {({ values, errors, touched, handleChange, handleSubmit }) => (
         <form className="mx-auto" onSubmit={handleSubmit}>
           {formInputs.map(({ label, name, placeholder, type }: InputType) => (
-            <div className="mb-6">
+            <div key={name} className="mb-6">
               <div className="flex">
                 <div className="w-full flex justify-start">
                   <Label label={label} htmlFor={name} />

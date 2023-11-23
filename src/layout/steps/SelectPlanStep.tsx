@@ -23,14 +23,14 @@ const SelectPlanStep = () => {
     {
       index: 2,
       icon: iconAdvanced,
-      name: PlanName.ARCADE,
+      name: PlanName.ADVANCED,
       price: { yearly: 120, monthly: 12 },
       selected: false,
     },
     {
       index: 3,
       icon: iconPro,
-      name: PlanName.ARCADE,
+      name: PlanName.PRO,
       price: { yearly: 150, monthly: 15 },
       selected: false,
     },
@@ -49,6 +49,7 @@ const SelectPlanStep = () => {
       <div className="flex mb-8">
         {plans.map((plan) => (
           <Plan
+            key={plan.index}
             plan={plan}
             isLast={plan.index === plans.length}
             optionBilling={optionBillingYearly}

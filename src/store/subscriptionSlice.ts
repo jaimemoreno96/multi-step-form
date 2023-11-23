@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { NewSubscription } from "../types";
+import { NewSubscription, PlanName } from "../types";
 import { steps } from "../mock";
 
 export const initialState: NewSubscription = {
@@ -7,8 +7,13 @@ export const initialState: NewSubscription = {
   yourInfo: {
     email: "",
     name: "",
-    phone: 0,
+    phone: "",
   },
+  selectPlan: {
+    plan: PlanName.ARCADE,
+    billingOption: false,
+  },
+  addons,
 };
 
 export const newSubscriptionSlice = createSlice({
