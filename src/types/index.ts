@@ -6,6 +6,7 @@ export interface StepType {
   component: () => JSX.Element;
   completed?: boolean;
   active?: boolean;
+  path?: string;
 }
 
 export interface YourInfoStepType {
@@ -45,10 +46,16 @@ export enum PlanName {
 }
 
 export interface AddOn {
-  title: string;
+  type: AddOnType;
   description: string;
   added: boolean;
   price: number;
+}
+
+export enum AddOnType {
+  ONLINE_SERVICE = "Online service",
+  LARGER_STORAGE = "Larger storage",
+  CUSTOMIZABLE_PROFILE = "Customizable profile",
 }
 
 export enum BillingOption {

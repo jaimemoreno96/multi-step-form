@@ -1,9 +1,13 @@
-import {
-  YourInfoStep,
-  SelectPlanStep,
-  AddOnsStep,
-  SummaryStep,
-} from "../layout/steps";
+// import {
+//   YourInfoStep,
+//   SelectPlanStep,
+//   AddOnsStep,
+//   SummaryStep,
+// } from "../layout/steps";
+import { AddOnsStep } from "../Step/AddOnsStep";
+import { SelectPlanStep } from "../Step/SelectPlanStep";
+import { YourInfoStep } from "../Step/YourInfoStep";
+import { SummaryStep } from "../Step/SummaryStep";
 import { StepType } from "../types";
 
 export const steps: StepType[] = [
@@ -14,6 +18,7 @@ export const steps: StepType[] = [
     description: "Please provide your name, email address, and phone number.",
     component: () => <YourInfoStep />,
     completed: false,
+    path: "/yourinfo",
   },
   {
     index: 2,
@@ -22,6 +27,7 @@ export const steps: StepType[] = [
     description: "You have the option of monthly or yearly billing.",
     component: () => <SelectPlanStep />,
     completed: false,
+    path: "/selectplan",
   },
   {
     index: 3,
@@ -30,6 +36,7 @@ export const steps: StepType[] = [
     description: "Add-ons help enhance your gaming experience.",
     component: () => <AddOnsStep />,
     completed: false,
+    path: "/addons",
   },
   {
     index: 4,
@@ -38,5 +45,6 @@ export const steps: StepType[] = [
     description: "Double-check everything looks OK before confirming.",
     component: () => <SummaryStep />,
     completed: false,
+    path: "/summary",
   },
 ];

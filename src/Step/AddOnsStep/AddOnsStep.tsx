@@ -1,4 +1,4 @@
-import { AddOn } from "../../components/AddOnsStep/AddOn";
+import { AddOn } from "./components/AddOn";
 
 const AddOnsStep = () => {
   const addOns = [
@@ -30,13 +30,10 @@ const AddOnsStep = () => {
       },
     },
   ];
-
   return (
     <div className="flex flex-col gap-y-4">
       {addOns.map((addOn) => (
-        <div>
-          <AddOn key={addOn.title} addOn={addOn} />
-        </div>
+        <AddOn key={addOn.title} addOn={addOn} />
       ))}
     </div>
   );

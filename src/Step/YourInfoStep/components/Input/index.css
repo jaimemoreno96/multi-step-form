@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+  .input {
+    @apply w-full border-solid border px-3.5 py-2 text-primary-marine-blue font-ubuntu-bold shadow-sm;
+  }
+
+  .input:focus {
+    @apply ring-1 ring-primary-purplish-blue;
+  }
+
+  .input::placeholder {
+    @apply text-neutral-cool-gray font-ubuntu-bold;
+  }
+}

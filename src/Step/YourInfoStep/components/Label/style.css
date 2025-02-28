@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .label {
+        @apply block text-sm font-ubuntu-medium text-primary-marine-blue;
+    }
+}

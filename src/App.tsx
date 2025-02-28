@@ -1,5 +1,5 @@
 import { Provider } from "react-redux";
-import { MainContainer } from "./layout";
+import MainContainer from "./MainContainer";
 import { store } from "./store";
 
 const App = () => {
